@@ -1,9 +1,10 @@
-package med.voll.api.medico;
+package med.voll.api.domain.medico;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
-    Page<Medico> findAllByAtivo(Boolean ativo, Pageable pageable);
+    Page<Medico> findAllByAtivo(@NotNull Boolean ativo, Pageable pageable);
 }

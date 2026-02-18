@@ -31,3 +31,16 @@ build/
 
 ### VS Code ###
 .vscode/
+
+#Alter ignore
+# Arquivos de configuração locais
+application-local.properties
+application-dev.properties
+application-prod.properties
+
+# Arquivo principal (se quiser proteger também)
+application.properties
+
+# Variáveis de ambiente
+.env
+.env.*
