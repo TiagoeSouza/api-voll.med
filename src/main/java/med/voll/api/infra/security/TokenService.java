@@ -16,9 +16,12 @@ import java.time.ZoneOffset;
 public class TokenService {
 
     @Value("${API_SECURITY_TOKEN_SECRET}")
-    private String secret;
+    private final String secret;
+    private final String ISSUER = "API Voll.med";
 
-    private String ISSUER = "API Voll.med";
+    public TokenService(@Value("${API_SECURITY_TOKEN_SECRET}") String secret) {
+        this.secret = secret;
+    }
 
     public String generateToken(Usuario usuario) {
         try {
