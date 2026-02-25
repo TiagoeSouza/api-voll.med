@@ -10,7 +10,8 @@ FROM eclipse-temurin:17-jdk
 WORKDIR /app
 COPY --from=build /app/target/api-0.0.1-SNAPSHOT.jar app.jar
 
-ENV PORT=8080
+# Expõe porta para Docker (não obrigatório, mas bom prática)
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "java -Dspring.profiles.active=prod -Dserver.port=$PORT -jar app.jar"]
+# Porta dinâmica fornecida pelo Render
+ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-Dserver.port=${PORT}", "-jar", "app.jar"]
