@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.domain.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("medicos")
+@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
     @Autowired
     private MedicoRepository medicoRepository;
@@ -57,7 +59,6 @@ public class MedicoController {
 
         return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
     }
-
 
     @PutMapping
     @Transactional

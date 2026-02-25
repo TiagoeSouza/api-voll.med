@@ -1,5 +1,5 @@
 DELETE
-FROM PACIENTES;
+FROM pacientes;
 
 INSERT INTO pacientes
 (nome, email, telefone, logradouro, bairro, cep, cidade, uf, numero, cpf, complemento)

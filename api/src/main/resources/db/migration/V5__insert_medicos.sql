@@ -1,5 +1,5 @@
 DELETE
-FROM MEDICOS;
+FROM medicos;
 
 INSERT INTO medicos
 (nome, email, crm, especialidade, logradouro, bairro, cep, complemento, numero, uf, cidade, telefone)
@@ -21,7 +21,7 @@ VALUES ('Tiago Esteves de Souza', 'tiago.souza@med.voll.com', '012345', 'GERAL',
        ('Eduardo Pereira Gomes', 'eduardo.gomes@clinicavida.com', '567890', 'CARDIOLOGIA', 'Avenida Atlântica',
         'Copacabana', '22021-001', 'Apto 1201', '1702', 'RJ', 'Rio de Janeiro', '(21) 97766-5544'),
 
-       ('Juliana Martins Rocha', 'juliana.rocha@clinicavida.com', '678901', 'GIMysql.10#NECOLOGIA',
+       ('Juliana Martins Rocha', 'juliana.rocha@clinicavida.com', '678901', 'GINECOLOGIA',
         'Rua Sete de Setembro',
         'Centro', '40060-001', NULL, '321', 'BA', 'Salvador', '(71) 99665-4433'),
 
