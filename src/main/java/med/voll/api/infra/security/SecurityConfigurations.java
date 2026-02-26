@@ -27,7 +27,12 @@ public class SecurityConfigurations {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorizeRequests -> {
                     authorizeRequests.requestMatchers(HttpMethod.POST, "/login").permitAll();
-                    authorizeRequests.requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll();
+                    authorizeRequests.requestMatchers(
+                            "/",
+                            "/v3/api-docs/**",
+                            "/swagger-ui.html",
+                            "/swagger-ui/**"
+                    ).permitAll();
 //                    Código para só permitir DELETAR caso usuário tenha role ADMIN
 //                    authorizeRequests.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN").anyRequest().authenticated();
                     authorizeRequests.anyRequest().authenticated();
